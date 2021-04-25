@@ -17,6 +17,15 @@ public class Principal {
 		
 		p.numbersGenerator(randomArray, MIN, MAX);
 		p.showArray(randomArray);
+		p.farewell(reader);
+	}
+
+	private void farewell(Scanner reader) {
+		
+		reader.close();
+		System.out.println();
+		System.out.println("Fin de la aplicación, hasta pronto.");
+		System.exit(0);
 	}
 
 	private void showArray(int[] randomArray) {
@@ -27,7 +36,10 @@ public class Principal {
 	private void numbersGenerator(int[] randomArray, int MIN, int MAX) {
 		
 		Random random = new Random();
-		for(int i=0; i<randomArray.length; i++) randomArray[i] = random.nextInt(MAX-MIN)+MIN;
-	}
+		for(int i=0; i<randomArray.length; i++) {
+			randomArray[i] = random.nextInt(MAX-MIN)+MIN;
+			for(int j=0; j<i; j++) if(randomArray[i] == randomArray[j]) i--;
+		}
 
+	}
 }
