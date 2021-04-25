@@ -7,14 +7,19 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
+		// Instancias.
 		Principal p = new Principal();
 		Scanner reader = new Scanner(System.in);
+		// Declaración del array.
 		int randomArray[];
+		// Declaración de constantes.
 		final int MIN = 1, MAX = 50;
 		
-		System.out.print("Introduzca el tama�o del array: ");
+		// Solicitud del valor de entrada.
+		System.out.print("Introduzca el tamaño del array: ");
 		randomArray = new int[reader.nextInt()];
 		
+		// Llamada a métodos.
 		p.numbersGenerator(randomArray, MIN, MAX);
 		p.showArray(randomArray);
 		p.farewell(reader);
@@ -24,7 +29,7 @@ public class Principal {
 		
 		reader.close();
 		System.out.println();
-		System.out.println("Fin de la aplicaci�n, hasta pronto.");
+		System.out.println("Fin de la aplicación, hasta pronto.");
 		System.exit(0);
 	}
 
